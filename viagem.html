@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <h1>Queres visitar Kathmandu?</h1>
+    <h2>responde só a este formulário para a tua estimativa de viagem</h2>
+
+    <form method="get" action="https://postman-echo.com/get"></form>
+    <fieldset>
+        <h1>Informações Pessoais</h1>
+        <p>
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome"  maxlength="20" required size="30" placeholder="Digita o teu nome" autofocus>
+        </p>
+    
+        <p>
+            <label for="apelido">Apelido:</label>
+            <input type="text" name="apelido" id="apelido" maxlength="20" required size="30" placeholder="Digita o teu apelido">
+        </p>
+    
+        <p>
+            <label for="email">E-mail:</label>
+            <input type="email" name="email" id="email" value="exemplo@exemplo.com" maxlength="100" required autocomplete="email" size="30" placeholder="Digita o teu email">
+        </p>
+
+        <h2>Informações Viagem</h2>
+
+        <p>
+            Data de partida
+            <input type="date">
+        </p>
+        <p></p>
+            Data de regresso
+            <input type="date">
+        </p>
+
+        <p>
+            Número de passageiros
+            <input type="number" min="1" max="20">
+        </p>
+
+        <p>Quais são os seus meios de transporte favoritos?
+            <input type="checkbox" name="transporte" value="carro"> carro
+<input type="checkbox" name="transporte" value="comboio"> comboio
+<input type="checkbox" name="transporte" value="avião"> avião
+<input type="checkbox" name="transporte" value="barco"> barco
+        </p>
+
+        <p>Que serviço deseja na sua viagem?
+            <p>
+            <label for="Básico">Básico</label>
+<input type="radio" id="basico" name="servico" value="basico">
+<label for="Premium">Premium</label>
+<input type="radio" id="premium" name="servico" value="premium">
+            </p>
+        </p>
+        <p>
+            Tem algum pedido especial para a sua viagem?
+            <input type="especial" name="especial" id="especial">
+        </p>
+
+        <p>
+            Quanto espera gastar na sua viagem?
+            <input type="number" min="1" max="100000000">
+        </p>
+
+    </fieldset>
+    <input type="submit" value="Enviar">
+</body>
