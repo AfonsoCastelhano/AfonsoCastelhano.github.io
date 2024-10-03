@@ -3,24 +3,44 @@
     <head>
         <meta charset="UTF-8">
         <title>Cidade</title>
+        <link rel="stylesheet" href="styles.css">
+        <style type="text/css">
+            #terracotta {color: #E3735E}
+        </style>
     </head>
     <body>
         <header>
             <h1>A minha Cidade</h1>
         </header>
-        <nav></nav>
+        <nav>
             <a href="index.html">Home</a>
             <a href="local.html">Localização</a>
             <a href="multimedia.html">Multimédia</a>
             <a href="info.html">Informação</a>
+            <a href="quizz.html">Quizz</a>
+            <a href="viagem.html">Viagem</a>
             </nav>
         <main>
             <h2>Multimédia</h2>
-            <h3>Fotografias</h3>
-            <img src="images/katmandu1_pequena.jpg"> <img src="images/katmandu2_pequena.jpg"> <img src="images/katmandu3_pequena.jpg">
-            <h3>Video</h3>
+            <p>
+                <a href="#fotografias">Fotografias</a>
+                <a href="#video">Vídeo</a>
+                <a href="#poema">Poema</a>
+            </p>
+
+
+            <section id="fotografias">
+                <h3 class="titulo" id="terracotta">Fotografias</h3>
+                <img src="images/katmandu1_pequena.jpg"> <img src="images/katmandu2_pequena.jpg"> <img src="images/katmandu3_pequena.jpg">
+            </section>
+            <section id="video">
+            <h3 class="titulo" id="terracotta">Video</h3>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/i3Hae7cNG90?si=8Gi006LOM2lL2FOM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <h3>Poema</h3>
+            </section>
+            <section id="poema">
+                <h3 class="titulo" id="terracotta">Poema</h3>
+            </section>
+            <section id="EscritaPoema">
             <p>
                 Nas montanhas altas, Katmandu floresce,
             </p>
@@ -42,14 +62,8 @@
             <p>
                 Sob os Himalaias, perto do céu e do mar.
             </p>
-            <p>
-                <a href="#fotografias">Fotografias</a>
-                <a href="#video">Vídeo</a>
-                <a href="#poema">Poema</a>
-            </p>
+            </section>
         </main>
-        <li><a href="quizz.html">Aceder ao Quizz</a> - Quizz</p> </li>
-        <li><a href="viagem.html">Planeia a tua viagem</a> - Viagem</p> </li>
         <footer>
             <p>DIW 2024</p>
         </footer>
