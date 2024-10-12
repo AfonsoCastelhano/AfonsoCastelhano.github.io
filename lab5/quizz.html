@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <h2>Quizz</h2>
+
+        <form method="get" action="https://postman-echo.com/get"></form>
+        <fieldset>
+            <h1>Informações Pessoais</h1>
+            
+            <p>
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome"  maxlength="20" required size="30" placeholder="Digita o teu nome" autofocus>
+            </p>
+        
+            <p>
+                <label for="apelido">Apelido:</label>
+                <input type="text" name="apelido" id="apelido" maxlength="20" required size="30" placeholder="Digita o teu apelido">
+            </p>
+        
+            <p>
+                <label for="email">E-mail:</label>
+                <input type="email" name="email" id="email" value="exemplo@exemplo.com" maxlength="100" required autocomplete="email" size="30" placeholder="Digita o teu email">
+            </p>
+            <p>
+                Data de Nascimento
+                <input type="date">
+            </p>
+
+            <p>Que horas são?
+                <input type="time">
+            </p>
+        </fieldset>
+        <form>
+            <input type="reset">
+<p>Em que país é que pertence Kathmandu?</p>
+<label for="Paquistão">Paquistão</label>
+<input type="radio" id="paquistao" name="pais" value="paquistao">
+<label for="Nepal">Nepal</label>
+<input type="radio" id="nepal" name="pais" value="nepal">
+<label for="Tailândia">Tailândia</label>
+<input type="radio" id="tailandia" name="pais" value="tailandia" >
+
+<p>Qual é a população aproximada de Kathmandu?</p>
+<input type="number" min="1" max="100" step="100000">
+
+<p>Quantas capitais teve o Nepal?</p>
+<input type="number" min="1" max="100">
+
+<p>Qual é a cor primária da bandeira do Nepal?</p>
+<input type="color">
+
+<p>Quais destas Mesquitas existem em Kathmandu?</p>
+<input type="checkbox" name="mesquitas" value="jamia"> Jamia
+<input type="checkbox" name="mesquitas" value="chhauni"> Chhauni
+<input type="checkbox" name="mesquitas" value="alnouralqamar"> Al-Nour Al-Qamar
+<input type="checkbox" name="mesquitas" value="khastamandap"> Khastamandap
+<input type="checkbox" name="mesquitas" value="baitalhikmah"> Bait Al-Hikmah
+
+<p>Procura a melhor foto que conseguires de Kathmandu e manda aqui!</p>
+<input type="image">
+
+<p>Quanto é que te divertiste com este quizz?</p>
+<input type="range" min="0" max="100" value="5">
+<p></p>
+<input type="submit" value="Enviar">
+<link rel="stylesheet" href="styles.css">
+
+
+</form>
+</body>

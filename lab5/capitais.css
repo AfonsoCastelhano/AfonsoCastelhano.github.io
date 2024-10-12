@@ -1,0 +1,145 @@
+* {
+    margin:0;  
+    padding:0;  
+    box-sizing: border-box; /* medidas sao tomadas da borda */
+}
+
+* {
+    font-family: sans-serif;
+    padding: 0; 
+    margin: 0;
+  }
+  
+  
+  header, main, article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+  }
+  
+  header {
+    background: #f5f5f5;
+    position: sticky;
+    height: 10vh;
+    top: 0;
+    display:flex;
+  }
+  
+  main {
+      height: 90vh;
+    background: purple;
+  }
+  
+  article {
+    height: 100vh;
+    background: #add8e6;
+  }
+  
+  article:last-child {
+    height: 100vh;
+    background: black;
+    color: white;
+  }
+
+  header h1{
+    font-size: 2em;  
+  padding: 1em;
+  }
+
+  header nav{
+    display:flex;
+  justify-content: flex-end;
+  margin-left: auto;  
+  }
+
+  header nav a {
+    padding:20px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+header nav a:link {
+    color: #808080;
+}
+
+header nav a:visited {
+    color: #d3d3d3;
+}
+
+header nav a:hover {
+    color: #808080;
+    background-color: #d3d3d3;
+    border-radius: 10px;
+}
+
+header nav a:active {
+    color: white;
+    background-color: rgb(139, 139, 192);
+}
+
+#poema p{
+    font-weight: bold;
+}
+
+#poema .autor{
+    font-style: italic;
+    font-weight: normal;
+}
+
+#paisagem {
+    position: relative;
+    display: inline-block;
+}
+
+#paisagem img {
+    width: 100%;
+    height: auto;
+}
+
+#paisagem a {
+    font-size: 20px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: white;
+    text-decoration: underline;
+}
+
+#paisagem a:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#cidades {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+#cidades section {
+    display: flex; 
+    align-items: center; 
+    flex: 1 1 calc(33% - 20px);
+    box-sizing: border-box;
+    margin: 10px;
+    text-align: left;
+}
+
+#cidades img {
+    max-width: 100px;
+    height: auto;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.texto {
+    
+        background-color: #f0f0f0;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: inline-block;
+}
