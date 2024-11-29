@@ -75,7 +75,7 @@ function listarProdutosSelecionados() {
     console.log('Produtos selecionados:', produtosSelecionados);
 }
 
-function atualizarCesto() {
+function atualizarCesto() { 
     const cestoContainer = document.getElementById('produtos-selecionados');
     const totalContainer = document.getElementById('total');
     cestoContainer.innerHTML = '';
@@ -83,7 +83,9 @@ function atualizarCesto() {
     let total = 0;
     const cesto = JSON.parse(localStorage.getItem('cesto')) || [];
 
-    cesto.forEach((produto, index) => {
+    for (let index = 0; index < cesto.length; index++) {
+        const produto = cesto[index];
+
         const produtoContainer = document.createElement('div');
         produtoContainer.className = 'produto-cesto';
 
@@ -100,20 +102,20 @@ function atualizarCesto() {
 
         total += produto.price;
 
-        const botaoRemover = document.createElement('button');
-        botaoRemover.textContent = 'Remover';
-        botaoRemover.addEventListener('click', () => {
-            removerDoCesto(index);
-            console.log(`Produto removido: ${produto.title}`);
+        const botao = document.createElement('button');
+        botao.textContent = 'Remover';
+        botao.addEventListener('click', function() {
+            const cestoUpdate = JSON.parse(localStorage.getItem('cesto')) || [];
+            cestoUpdate.splice(index, 1);
+            localStorage.setItem('cesto', JSON.stringify(cestoUpdate));
+            atualizarCesto();
         });
-
         produtoContainer.appendChild(titulo);
         produtoContainer.appendChild(imagem);
         produtoContainer.appendChild(preco);
-        produtoContainer.appendChild(botaoRemover);
-
+        produtoContainer.appendChild(botao);
         cestoContainer.appendChild(produtoContainer);
-    });
+    }
 
     totalContainer.textContent = `Preço Total: € ${total.toFixed(2)}`;
 }
