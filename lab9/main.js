@@ -77,10 +77,8 @@ function listarProdutosSelecionados() {
 
 function atualizarCesto() { 
     const cestoContainer = document.getElementById('produtos-selecionados');
-    const totalContainer = document.getElementById('total');
     cestoContainer.innerHTML = '';
 
-    let total = 0;
     const cesto = JSON.parse(localStorage.getItem('cesto')) || [];
 
     for (let index = 0; index < cesto.length; index++) {
@@ -100,8 +98,6 @@ function atualizarCesto() {
         const preco = document.createElement('p');
         preco.textContent = `Preço: € ${produto.price.toFixed(2)}`;
 
-        total += produto.price;
-
         const botao = document.createElement('button');
         botao.textContent = 'Remover';
         botao.addEventListener('click', function() {
@@ -110,6 +106,7 @@ function atualizarCesto() {
             localStorage.setItem('cesto', JSON.stringify(cestoUpdate));
             atualizarCesto();
         });
+
         produtoContainer.appendChild(titulo);
         produtoContainer.appendChild(imagem);
         produtoContainer.appendChild(preco);
@@ -117,7 +114,16 @@ function atualizarCesto() {
         cestoContainer.appendChild(produtoContainer);
     }
 
+    calcularTotal();
+}
+function calcularTotal() {
+    const cesto = JSON.parse(localStorage.getItem('cesto')) || [];
+    const total = cesto.reduce((soma, produto) => soma + produto.price, 0);
+
+    const totalContainer = document.getElementById('total');
     totalContainer.textContent = `Preço Total: € ${total.toFixed(2)}`;
+
+    return total;
 }
 
 carregarProdutos(produtos);
