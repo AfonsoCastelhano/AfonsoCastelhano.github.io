@@ -1,0 +1,120 @@
+/* Configuração do body */
+body {
+    background-color: #f4e1d2; /* Cor suave de fundo terracotta clara */
+    color: #4e3b31; /* Texto escuro (castanho) para bom contraste */
+    font-family: 'Arial', sans-serif; /* Fonte simples e moderna */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Cabeçalho */
+h1 {
+    text-align: center;
+    font-size: 3em;
+    color: #6a4e3c; /* Terracotta escuro */
+    margin-top: 40px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Parágrafos */
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-align: center;
+    color: #5d4037; /* Cor de texto suave em tom castanho */
+    margin: 15px 20px;
+}
+
+/* Links */
+a {
+    color: #d25e28; /* Laranja-terracotta */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #a14e2f; /* Laranja mais escuro */
+}
+
+/* Caixa principal que contém os laboratórios */
+.laboratories-container {
+    max-width: 900px;
+    margin: 40px auto;
+    background-color: #ffffff; /* Caixa branca */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo das listas de laboratórios */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilo de cada item da lista (laboratório) */
+ul li {
+    background-color: #f7e2d0; /* Fundo suave terracotta */
+    padding: 15px 25px;
+    margin: 10px 0;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s ease-in-out;
+    border: 2px solid #d25e28; /* Borda laranja-terracotta */
+}
+
+ul li:hover {
+    transform: translateY(-5px); /* Efeito de levantamento */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo dos links dentro das listas (laboratórios) */
+li a {
+    color: #6a4e3c; /* Castanho escuro */
+    text-decoration: none;
+    font-weight: normal;
+    display: block;
+    padding: 8px 15px;
+    background-color: #f7e2d0; /* Fundo terracotta suave */
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+li a:hover {
+    background-color: #d25e28; /* Laranja terracotta ao passar o mouse */
+    color: #ffffff;
+}
+
+/* Estilo da imagem */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 30px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Rodapé */
+footer {
+    background-color: #6a4e3c; /* Cor de fundo castanho escuro */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1.1em;
+    margin-top: 40px;
+}
+
+/* Estilo para os títulos de seção (h2) */
+h2 {
+    font-size: 2.5em;
+    text-align: center;
+    color: #6a4e3c;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
