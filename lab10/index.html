@@ -15,8 +15,25 @@
         </nav>
     </header>
     <main>
+        <h2>Selecione os Seus Produtos</h2>
+        <section class="filtro-ordenar-container">
+            <p>Filtrar
+                <select id="filtro-categoria">
+                    <option value="todos">Todos</option>
+                    <option value="T-shirts">T-Shirts</option>
+                    <option value="Canecas">Canecas</option>
+                    <option value="Camisas">Camisas</option>
+                </select>
+            </p>
+            <p>Ordenar
+                <select id="ordenar-preco">
+                    <option value="nenhum">Nenhum</option>
+                    <option value="crescente">Preço Crescente</option>
+                    <option value="decrescente">Preço Decrescente</option>
+                </select>
+            </p>
+        </section>
         <section id="listaProdutos">
-            <h2>Produtos</h2>
             <section id="produtos" class="produtos-container"></section>
         </section>
 
