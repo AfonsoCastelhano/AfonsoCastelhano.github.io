@@ -112,11 +112,6 @@ function removerDoCesto(index) {
     atualizarCesto();
 }
 
-function listarProdutosSelecionados() {
-    const produtosSelecionados = JSON.parse(localStorage.getItem('produtos-selecionados')) || [];
-    console.log('Produtos selecionados:', produtosSelecionados);
-}
-
 function atualizarCesto() {
     const cestoContainer = document.getElementById('produtos-selecionados');
     cestoContainer.innerHTML = '';
@@ -168,11 +163,72 @@ function criarElementoDoCesto(produto, index) {
 
 function calcularTotal() {
     const cesto = JSON.parse(localStorage.getItem('cesto')) || [];
-    const total = cesto.reduce((soma, produto) => soma + produto.price, 0);
+    let total = cesto.reduce((soma, produto) => soma + produto.price, 0);
+
+    if (document.querySelector('input[name="deisi"]:checked')) {
+        total *= 0.95;
+    }
+
+    const codigoDesconto = document.getElementById('codigo').value;
+    if (codigoDesconto === 'black-friday') {
+        total *= 0.95;
+    }
 
     const totalContainer = document.getElementById('total');
     totalContainer.textContent = `Preço Total: € ${total.toFixed(2)}`;
 
     return total;
 }
+
+document.querySelector('button').addEventListener('click', async function () {
+    const cesto = JSON.parse(localStorage.getItem('cesto')) || [];
+    if (cesto.length === 0) {
+        alert('Erro: Não foram selecionados produtos');
+        return;
+    }
+
+    const total = calcularTotal();
+    const referenciaPagamento = '201124-0004'; 
+
+    const dadosCompra = {
+        totalCost: total.toFixed(2),
+        reference: referenciaPagamento,
+        example: 'Excelente escolha! A DEISI Shop agradece a sua preferência!',
+        error: ''
+    };
+
+    try {
+        const response = await fetch('https://deisishop.pythonanywhere.com/buy', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(dadosCompra)
+        });
+
+        const resultado = await response.json();
+        if (resultado.error) {
+            alert(`Erro: ${resultado.error}`);
+        } else {
+            alert(resultado.example);
+        }
+    } catch (error) {
+        console.error('Erro ao processar a compra:', error);
+        alert('Erro ao processar a compra');
+    }
+});
+
+document.getElementById('pesquisa').addEventListener('input', (event) => {
+    const termoPesquisa = event.target.value.toLowerCase();
+    pesquisarProdutos(termoPesquisa);
+});
+
+function pesquisarProdutos(termo) {
+    const produtosFiltrados = listaDeProdutos.filter(produto => 
+        produto.title.toLowerCase().includes(termo)
+    );
+
+    criarProdutos(produtosFiltrados);
+}
+
 carregarProdutos();
