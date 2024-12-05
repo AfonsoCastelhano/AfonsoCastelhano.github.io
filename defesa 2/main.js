@@ -79,8 +79,8 @@ function criarProdutos(produtosParaMostrar = listaDeProdutos) {
         });
 
         botaoCompraTudo.addEventListener('click', () => {
-            for(let i = 0; i < listaDeProdutos.length; i++){
-                const produtoTudo = listaDeProdutos[i];
+            for(let i = 0; i < produtosParaMostrar.length; i++){
+                const produtoTudo = produtosParaMostrar[i];
             adicionarAoCesto(produtoTudo);
             console.log(`Produto adicionado: ${produtoTudo.title}`);
             }
