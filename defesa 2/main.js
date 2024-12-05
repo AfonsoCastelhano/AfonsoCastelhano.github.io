@@ -22,7 +22,8 @@ async function carregarProdutos() {
                 category: produto.category,
                 image: produto.image,
                 rating: produto.rating,
-                rate: produto.rate
+                rate: produto.rating.rate,
+                count: produto.rating.count
             });
         });
 
@@ -106,9 +107,9 @@ function ordenarProdutos(ordem) {
     let produtosOrdenados = [...listaDeProdutos];
 
     if (ordem === 'crescente') {
-        produtosOrdenados.sort((a, b) => a.rate - b.rate);
+        produtosOrdenados.sort((a, b) => a.count - b.count);
     } else if (ordem === 'decrescente') {
-        produtosOrdenados.sort((a, b) => b.rate - a.rate);
+        produtosOrdenados.sort((a, b) => b.count - a.count);
     }
 
     criarProdutos(produtosOrdenados);
