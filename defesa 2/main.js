@@ -68,6 +68,9 @@ function criarProdutos(produtosParaMostrar = listaDeProdutos) {
         const descricao = document.createElement('p');
         descricao.textContent = produto.description;
 
+        const rating = document.createElement('p');
+        rating.textContent = 'produto.rating.rate'
+
         const preco = document.createElement('p');
         preco.textContent = `Preço: € ${produto.price.toFixed(2)}`;
 
@@ -91,6 +94,7 @@ function criarProdutos(produtosParaMostrar = listaDeProdutos) {
         produtoContainer.appendChild(imagem);
         produtoContainer.appendChild(descricao);
         produtoContainer.appendChild(preco);
+        produtoContainer.appendChild(rating);
         produtoContainer.appendChild(botaoAdicionar);
 
         produtosSection.appendChild(produtoContainer);
