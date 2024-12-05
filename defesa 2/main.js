@@ -69,7 +69,7 @@ function criarProdutos(produtosParaMostrar = listaDeProdutos) {
         descricao.textContent = produto.description;
 
         const rating = document.createElement('p');
-        rating.textContent = `${produto.rating.rate}`;
+        rating.textContent = `rating: ${produto.rating.rate}`;
 
         const preco = document.createElement('p');
         preco.textContent = `Preço: € ${produto.price.toFixed(2)}`;
